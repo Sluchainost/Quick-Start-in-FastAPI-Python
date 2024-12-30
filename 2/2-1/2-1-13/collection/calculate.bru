@@ -1,0 +1,16 @@
+meta {
+  name: calculate
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8000/calculate?num1=5&num2=5
+  body: none
+  auth: none
+}
+
+params:query {
+  num1: 5
+  num2: 5
+}

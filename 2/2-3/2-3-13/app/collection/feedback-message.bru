@@ -1,0 +1,18 @@
+meta {
+  name: feedback-message
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost:8000/comments
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Alice",
+    "message": "Great course! I'm learning a lot."
+  }
+}
