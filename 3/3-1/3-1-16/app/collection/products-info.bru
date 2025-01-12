@@ -1,0 +1,17 @@
+meta {
+  name: products-info
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost:8000/products/search?keyword=phone&category=Electronics&limit=5
+  body: none
+  auth: none
+}
+
+params:query {
+  keyword: phone
+  category: Electronics
+  limit: 5
+}

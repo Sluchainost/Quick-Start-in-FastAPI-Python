@@ -1,0 +1,20 @@
+meta {
+  name: create_user
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8000/create_user
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "name": "Alice",
+      "email": "alice@example.com",
+      "age": 30,
+      "is_subscribed": true
+  }
+}
