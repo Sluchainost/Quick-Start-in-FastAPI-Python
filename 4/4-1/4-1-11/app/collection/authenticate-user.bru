@@ -1,0 +1,16 @@
+meta {
+  name: authenticate_user
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost:8000/login/
+  body: none
+  auth: basic
+}
+
+auth:basic {
+  username: user1
+  password: pass1
+}
