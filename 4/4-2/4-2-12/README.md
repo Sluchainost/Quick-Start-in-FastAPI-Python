@@ -14,10 +14,10 @@ Requirements:
 
 ## Sample request
 
-```json
     POST /login
     Content-Type: application/json
 
+```json
     {
     "username": "john_doe",
     "password": "securepassword123"
