@@ -1,0 +1,15 @@
+meta {
+  name: get-admin-info
+  type: http
+  seq: 9
+}
+
+get {
+  url: http://localhost:8000/info/
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJBRE1JTiIsImV4cCI6MTczOTk2NTM0M30.Z_uF4YWvj-8UOUbqtAHFQOMR0TgzZjFmx_GKcy8GV3Y
+}

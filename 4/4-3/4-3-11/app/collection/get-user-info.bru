@@ -1,0 +1,15 @@
+meta {
+  name: get-user-info
+  type: http
+  seq: 10
+}
+
+get {
+  url: http://localhost:8000/info/
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyIiwicm9sZSI6IlVTRVIiLCJleHAiOjE3Mzk5NjUzODB9.B5WaVp6C9F3US4QKX85d4CVZs2Ay9MyxzsTfIH7lWxU
+}

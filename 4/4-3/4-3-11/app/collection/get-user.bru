@@ -1,0 +1,15 @@
+meta {
+  name: get-user
+  type: http
+  seq: 4
+}
+
+get {
+  url: http://localhost:8000/user/
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyIiwicm9sZSI6IlVTRVIiLCJleHAiOjE3Mzk5NjQ4NzZ9.TNvlNZ_FYuTgnIoRH--LB61AVDwWq8NTPd2CYy8iz5w
+}

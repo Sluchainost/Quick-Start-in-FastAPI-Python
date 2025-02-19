@@ -1,0 +1,15 @@
+meta {
+  name: get-admin-protected-resource
+  type: http
+  seq: 8
+}
+
+get {
+  url: http://localhost:8000/protected_resource/
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJBRE1JTiIsImV4cCI6MTczOTk2NTIyNX0.UNpJWobxT7pp4bMazdqJMP9NMckKeoTqjzbmASNTjgo
+}

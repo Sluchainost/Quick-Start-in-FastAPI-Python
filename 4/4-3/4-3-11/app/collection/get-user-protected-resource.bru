@@ -1,0 +1,15 @@
+meta {
+  name: get-user-protected-resource
+  type: http
+  seq: 7
+}
+
+get {
+  url: http://localhost:8000/protected_resource/
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyIiwicm9sZSI6IlVTRVIiLCJleHAiOjE3Mzk5NjUxNjB9.9z-heYjv9U2cNop6EiKVC7forFUO1fY9LlLkmp2Ol_0
+}

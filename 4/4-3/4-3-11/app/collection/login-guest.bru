@@ -1,0 +1,19 @@
+meta {
+  name: login-guest
+  type: http
+  seq: 6
+}
+
+post {
+  url: http://localhost:8000/login
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "username": "guest",
+    "password": "12345"
+  }
+  
+}
