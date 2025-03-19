@@ -1,45 +1,19 @@
-""" DOC """
+"""This module provides the repository implementation for ToDo items.
+It extends the base repository class to interact with
+the ToDo ORM model, providing access to persistence
+methods such as adding and retrieving ToDo records.
+"""
 
-from abc import ABC, abstractmethod
-
-from sqlalchemy import select
-from sqlalchemy.ext.asyncio import AsyncSession
-
-from app.api.schemas.todo import ToDoCreate
 from app.db.models import ToDo
+from app.repositories.base_repository import Repository
 
 
-class ToDoRepository(ABC):
-    """ DOC """
+class ToDoRepository(Repository):
+    """Repository for managing ToDo items in the data store.
 
-    @abstractmethod
-    async def get_todos(self) -> list[ToDo]:
-        """ DOC """
+    This repository extends the base Repository to handle operations specific
+    to ToDo items. It configures the model attribute to use the ToDo ORM model,
+    allowing for CRUD operations tailored to the ToDo entity.
+    """
 
-    @abstractmethod
-    async def create_todo(self, todo: ToDoCreate) -> ToDo:
-        """ DOC """
-
-
-class SqlAlchemyToDoRepository(ToDoRepository):
-    """ DOC """
-
-    def __init__(self, session: AsyncSession):
-        """ DOC """
-
-        self.session = session
-
-    async def get_todos(self) -> list[ToDo]:
-        """ DOC """
-
-        result = await self.session.execute(select(ToDo))
-        return result.scalars().all()
-
-    async def create_todo(self, todo: ToDoCreate) -> ToDo:
-        """ DOC """
-
-        new_todo = ToDo(**todo.model_dump())
-        self.session.add(new_todo)
-        await self.session.commit()
-        await self.session.refresh(new_todo)
-        return new_todo
+    model = ToDo

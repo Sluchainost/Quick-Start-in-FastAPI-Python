@@ -1,23 +1,33 @@
-import os
-import sys
+import os  # Added os import to extract our variables from the environment
+import sys  # Added import of sys module for working with paths
+# (sys is needed for further imports,
+# otherwise alembic will not see our app folder)
 
 from logging.config import fileConfig
 
+from alembic import context
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 
-from alembic import context
-
+# Here we added our app folder to the path so that alembic could see it.
+# The order of imports is intentionally broken,
+# because the code is executed line by line
 sys.path.append(os.path.join(sys.path[0], 'app'))
 
-from app.core.config import settings
-from app.db.database import Base
-from app.db.models import ToDo
+from app.core.config import settings  # Added import of our config # noqa: E402
+from app.db.database import Base  # Added import of our meta-DB # noqa: E402
+from app.db.models import ToDo  # noqa: E402, F401
+# Added import of model so it is initialized, but it is not used
+# without this import alembic may not see
+# our models and will create an empty migration
+
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
 
+# Added work with config sections / work with environment variables
+# so that they become available in alembic.ini
 section = config.config_ini_section
 config.set_section_option(section, "DB_HOST", settings.DB_HOST)
 config.set_section_option(section, "DB_PORT", settings.DB_PORT)

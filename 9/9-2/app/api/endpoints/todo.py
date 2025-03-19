@@ -1,13 +1,14 @@
-""" DOC """
+""" ToDo API Endpoints
+
+This module defines the API endpoints for managing ToDo items.
+Endpoints include retrieving a list of todo items and creating a new todo item.
+"""
 
 from fastapi import APIRouter, Depends
 
-from sqlalchemy.ext.asyncio import AsyncSession
-
 from app.api.schemas.todo import ToDoCreate, ToDoFromDB
-from app.db.database import get_async_session
-from app.repositories.todo_repository import (ToDoRepository,
-                                              SqlAlchemyToDoRepository)
+from app.services.todo_service import ToDoService
+from app.utils.unitofwork import UnitOfWork, IUnitOfWork
 
 
 todo_router = APIRouter(
@@ -16,26 +17,43 @@ todo_router = APIRouter(
 )
 
 
-async def get_todo_repository(
-                        session: AsyncSession = Depends(get_async_session)
-                             ) -> ToDoRepository:
-    """ DOC """
+async def get_todo_service(
+                            uow: IUnitOfWork = Depends(UnitOfWork)
+                           ) -> ToDoService:
+    """
+    Dependency provider for the ToDoService.
 
-    return SqlAlchemyToDoRepository(session)
+    Uses dependency injection to supply a UnitOfWork instance (via IUnitOfWork)
+    to instantiate and return a ToDoService, ensuring transactional control.
+    """
 
-
-@todo_router.get("/", response_model=list[ToDoFromDB])
-async def get_todos(repo: ToDoRepository = Depends(get_todo_repository)):
-    """ DOC """
-
-    return await repo.get_todos()
+    return ToDoService(uow)
 
 
-@todo_router.post("/", response_model=ToDoFromDB)
-async def create_todos(
-                       todo: ToDoCreate,
-                       repo: ToDoRepository = Depends(get_todo_repository)
+@todo_router.get("/todos/", response_model=list[ToDoFromDB])
+async def get_todos(todo_service: ToDoService = Depends(get_todo_service)):
+    """
+    Retrieve all ToDo items.
+
+    This endpoint returns a list of ToDo items,
+    each represented by the ToDoFromDB schema.
+    It leverages the ToDoService to interact with the datastore.
+    """
+
+    return await todo_service.get_todos()
+
+
+@todo_router.post("/todos/", response_model=ToDoFromDB)
+async def create_todo(
+                       todo_data: ToDoCreate,
+                       todo_service: ToDoService = Depends(get_todo_service)
                        ):
-    """ DOC """
+    """
+    Create a new ToDo item.
 
-    return await repo.create_todo(todo)
+    Accepts a ToDoCreate payload to create a new ToDo entry in the datastore.
+    Returns the created ToDo item using the ToDoFromDB schema
+    from the database after the commit.
+    """
+
+    return await todo_service.add_todo(todo_data)
