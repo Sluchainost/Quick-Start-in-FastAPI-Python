@@ -14,8 +14,10 @@ Requirements:
 
 ## Sample request
 
-    POST /login
-    Content-Type: application/json
+```markdown
+POST /login
+Content-Type: application/json
+```
 
 ```json
     {
