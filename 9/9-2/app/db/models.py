@@ -26,7 +26,9 @@ class ToDo(Base):
     description: Mapped[str]
     completed: Mapped[bool] = mapped_column(default=False)
     created_at: Mapped[datetime.datetime] = mapped_column(
-                                                DateTime,
-                                                nullable=False,
-                                                default=datetime.UTC
+                                        DateTime(timezone=True),
+                                        nullable=False,
+                                        default=lambda: datetime.datetime.now(
+                                                        datetime.timezone.utc
+                                                        )
                                                     )
