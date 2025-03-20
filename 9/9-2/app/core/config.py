@@ -3,6 +3,7 @@ It loads environment variables necessary to connect to the PostgreSQL database
 and provides a utility property to construct the asynchronous database URL.
 """
 
+import os
 from pydantic_settings import BaseSettings
 
 
@@ -36,8 +37,10 @@ class Settings(BaseSettings):
             str: The complete asynchronous database connection URL.
         """
 
-        return f"postgresql+asyncpg://{self.DB_USER}:{self.DB_PASS}@ \
-            {self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
+        return (
+            f"postgresql+asyncpg://{self.DB_USER}:{self.DB_PASS}@"
+            f"{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
+            )
 
     class Config:
         """Pydantic configuration for the Settings class.
@@ -47,7 +50,7 @@ class Settings(BaseSettings):
                             environment variables from.
         """
 
-        env_file = ".env"
+        env_file = os.path.join(os.path.dirname(__file__), '../../.env')
 
 
 settings = Settings()
