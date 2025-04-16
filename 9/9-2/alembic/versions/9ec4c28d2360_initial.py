@@ -1,3 +1,6 @@
+# pylint: disable-all
+# flake8: noqa
+
 """initial
 
 Revision ID: 9ec4c28d2360
@@ -7,8 +10,8 @@ Create Date: 2025-03-17 14:38:59.513278
 """
 from typing import Sequence, Union
 
-from alembic import op  # noqa: F401
-import sqlalchemy as sa  # noqa: F401
+from alembic import op
+import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.

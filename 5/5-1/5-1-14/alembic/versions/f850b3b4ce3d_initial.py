@@ -1,3 +1,6 @@
+# pylint: disable-all
+# flake8: noqa
+
 """initial
 
 Revision ID: f850b3b4ce3d

@@ -1,17 +1,21 @@
+# pylint: disable-all
+# flake8: noqa
+
 import os
 import sys
 
 from logging.config import fileConfig
 
 from alembic import context
+
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 
 sys.path.append(os.path.join(sys.path[0], 'app'))
 
-from app.core.config import settings  # noqa: E402, F401
-from app.db.database import Base  # noqa: E402
-from app.db.models import ToDo  # noqa: E402, F401
+from app.core.config import settings
+from app.db.database import Base
+from app.db.models import ToDo
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
