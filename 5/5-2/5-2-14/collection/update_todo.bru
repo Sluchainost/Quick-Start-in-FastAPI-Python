@@ -1,0 +1,17 @@
+meta {
+  name: update_todo
+  type: http
+  seq: 4
+}
+
+put {
+  url: http://127.0.0.1:8000/todo/todos/3
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "completed": true
+  }
+}

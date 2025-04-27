@@ -1,0 +1,11 @@
+meta {
+  name: delete_todo
+  type: http
+  seq: 5
+}
+
+delete {
+  url: http://127.0.0.1:8000/todo/todos/3
+  body: none
+  auth: inherit
+}
