@@ -1,0 +1,97 @@
+{
+    // updates disabled
+    "extensions.autoCheckUpdates": false,
+    "update.enableWindowsBackgroundUpdates": false,
+    "extensions.autoUpdate": false,
+    "update.showReleaseNotes": false,
+    "update.mode": "none",
+
+    // terminal
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorWidth": 2,
+    "terminal.integrated.enableFileLinks": "off",
+    "terminal.integrated.scrollback": 50,
+
+    // editor
+    "editor.minimap.enabled": false,
+    "editor.find.seedSearchStringFromSelection": "selection",
+    "editor.accessibilitySupport": "off",
+    "editor.autoClosingDelete": "never",
+    "editor.autoClosingOvertype": "never",
+    "editor.definitionLinkOpensInPeek": true,
+    "editor.hover.delay": 100,
+    "editor.roundedSelection": false,
+    "editor.scrollbar.horizontal": "visible",
+    "editor.scrollbar.vertical": "visible",
+    "editor.scrollbar.scrollByPage": true,
+    "editor.selectionHighlight": false,
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.includeStrings": false,
+
+    // debug
+    "debug.autoExpandLazyVariables": "on",
+    "debug.inlineValues": "on",
+    "debug.terminal.clearBeforeReusing": true,
+
+    // disable or change junk features
+    "window.commandCenter": false,
+    "workbench.startupEditor": "none",
+    "explorer.autoReveal": false,
+    "explorer.compactFolders": false,
+    "files.autoSave": "afterDelay",
+    "breadcrumbs.enabled": false,
+    "workbench.cloudChanges.autoResume": "off",
+    "workbench.cloudChanges.continueOn": "off",
+    "workbench.enableExperiments": false,
+    "workbench.quickOpen.closeOnFocusLost": false,
+    "workbench.settings.enableNaturalLanguageSearch": false,
+    "window.density.editorTabHeight": "compact",
+    "accessibility.verbosity.comments": false,
+    "search.defaultViewMode": "tree",
+    "telemetry.telemetryLevel": "off",
+    "extensions.closeExtensionDetailsOnViewChange": true,
+    "settingsSync.keybindingsPerPlatform": false,
+
+    // themes
+    "workbench.colorTheme": "Monokai",
+    "window.zoomLevel": 0.1,
+
+    // git
+    "git.autoRepositoryDetection": "subFolders",
+
+    // Python analysis and formatting
+    "python.analysis.typeCheckingMode": "basic", // Можно поставить "strict" для максимальной строгости
+    "python.analysis.diagnosticMode": "openFilesOnly", // Или "workspace" если хочется видеть ошибки во всех файлах
+    "python.analysis.autoSearchPaths": true,
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.completeFunctionParens": true,
+    "python.analysis.importFormat": "absolute",
+    "python.analysis.indexing": true,
+    "python.analysis.packageIndexDepths": [
+        {
+            "name": "fastapi",
+            "depth": 3,
+            "includeAllSymbols": true
+        }
+    ],
+
+    // Python formatting and imports
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "python.sortImports.args": ["--profile", "black"],
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit",
+        "source.fixAll": "explicit"
+    },
+
+    // Python testing
+    "python.testing.pytestEnabled": true,
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.autoTestDiscoverOnSaveEnabled": true,
+
+    // Python interpreter
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python"
+}
