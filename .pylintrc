@@ -1,0 +1,48 @@
+[MASTER]
+# This init-hook ensures the project root is added to PYTHONPATH during linting.
+init-hook='import sys; sys.path.append(".")'
+# Files or directories to be completely ignored by pylint.
+ignore=alembic, migrations, tests
+# Alternatively, if you want to ignore only specific files (for example, env.py in alembic directories),
+# you can add regex patterns. This regex matches any env.py inside an alembic folder.
+ignore-patterns=.*[\\/]alembic[\\/]env\.py$
+
+[MESSAGES CONTROL]
+# Disable specific warnings that conflict with our project style or come from auto-generated code.
+disable=
+    missing-docstring,    ; we know some auto-generated or one-liner functions might lack docstrings.
+    invalid-name,         ; allows for shorter variable or attribute names if needed.
+    too-few-public-methods, ; common in Pydantic models or SQLAlchemy mappers.
+    import-error,         ; useful if dynamic imports or generated modules cause false alarms.
+    too-many-arguments,   ; often encountered in FastAPI dependencies.
+    duplicate-code        ; sometimes common in boilerplate code across endpoints.
+
+[REPORTS]
+# Do not display a full report at the end of the lint output.
+reports=no
+
+[FORMAT]
+# Set maximum allowed line length. For modern projects, a slightly wider limit can be helpful.
+max-line-length=79
+
+[TYPECHECK]
+# Mark members that are dynamically generated or commonly available via the ORM or migration libraries.
+generated-members=sqlalchemy.*, alembic.context.*
+
+[DESIGN]
+# Maximum number of arguments allowed for functions/methods.
+max-args=10
+
+[SIMILARITIES]
+# Ignore comments and docstrings when computing similarities to avoid false-positive duplicated code warnings.
+ignore-comments=yes
+ignore-docstrings=yes
+min-similarity-lines=4
+
+[LOGGING]
+# Use the new style of string formatting for log messages.
+logging-format-style=new
+
+[EXCEPTIONS]
+# Exceptions that are too general can be flagged; list any common overgeneral exceptions here.
+overgeneral-exceptions=Exception
