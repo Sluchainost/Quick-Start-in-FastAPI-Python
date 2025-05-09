@@ -6,6 +6,9 @@
             "label": "Run Pytest",
             "type": "shell",
             "command": "pytest",
+            "options": {
+            "cwd": "${workspaceFolder}/5/5-3/5-3-2"
+            },
             "group": "test",
             "problemMatcher": []
         },
@@ -13,20 +16,29 @@
             "label": "Format with Black",
             "type": "shell",
             "command": "black .",
+            "options": {
+            "cwd": "${workspaceFolder}/5/5-3/5-3-2"
+            },
             "group": "build",
             "problemMatcher": []
         },
         {
             "label": "Lint with Pylint",
             "type": "shell",
-            "command": "pylint src/",
+            "command": "pylint app/",
+            "options": {
+            "cwd": "${workspaceFolder}/5/5-3/5-3-2"
+            },
             "group": "test",
             "problemMatcher": []
         },
         {
             "label": "Type Check with Mypy",
             "type": "shell",
-            "command": "mypy src/",
+            "command": "mypy app/",
+            "options": {
+            "cwd": "${workspaceFolder}/5/5-3/5-3-2"
+            },
             "group": "test",
             "problemMatcher": []
         },
@@ -34,6 +46,9 @@
             "label": "Run FastAPI (Uvicorn)",
             "type": "shell",
             "command": "uvicorn main:app --reload",
+            "options": {
+            "cwd": "${workspaceFolder}/5/5-3/5-3-2"
+            },
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -44,6 +59,9 @@
             "label": "Run Alembic Migration (upgrade head)",
             "type": "shell",
             "command": "alembic upgrade head",
+            "options": {
+            "cwd": "${workspaceFolder}/5/5-3/5-3-2"
+            },
             "group": "build",
             "problemMatcher": []
         },
@@ -51,6 +69,9 @@
             "label": "Create Alembic Migration (autogenerate)",
             "type": "shell",
             "command": "alembic revision --autogenerate -m \"New migration\"",
+            "options": {
+            "cwd": "${workspaceFolder}/5/5-3/5-3-2"
+            },
             "group": "build",
             "problemMatcher": []
         }
