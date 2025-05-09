@@ -1,5 +1,3 @@
-
-
 # Python bytecode, cache, and compiled files
 __pycache__/
 *.py[cod]
