@@ -2,10 +2,13 @@
 # This init-hook ensures the project root is added to PYTHONPATH during linting.
 init-hook='import sys; sys.path.append(".")'
 # Files or directories to be completely ignored by pylint.
-ignore=alembic, migrations, tests
+ignore=alembic, migrations, tests, 2, 3, 4, 9/9-2, 5/5-1, 5/5-2
 # Alternatively, if you want to ignore only specific files (for example, env.py in alembic directories),
 # you can add regex patterns. This regex matches any env.py inside an alembic folder.
 ignore-patterns=.*[\\/]alembic[\\/]env\.py$
+# Limit Pylint to a single core to reduce CPU spikes.
+# 0 means use all available cores.
+jobs=1
 
 [MESSAGES CONTROL]
 # Disable specific warnings that conflict with our project style or come from auto-generated code.
@@ -16,6 +19,11 @@ disable=
     import-error,         ; useful if dynamic imports or generated modules cause false alarms.
     too-many-arguments,   ; often encountered in FastAPI dependencies.
     duplicate-code        ; sometimes common in boilerplate code across endpoints.
+    # Consider disabling more checks temporarily for diagnosis if CPU usage is still high
+    # C0301, # line-too-long
+    # R0903, # too-few-public-methods
+    # R0913, # too-many-arguments
+    # W0511  # fixm
 
 [REPORTS]
 # Do not display a full report at the end of the lint output.
