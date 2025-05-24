@@ -1,146 +1,92 @@
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "Quick-Start-in-FastAPI-Python"
 version = "0.1.0"
 description = "Quick Start in FastAPI Project"
-readme = "README.md"
-requires-python = ">=3.12"
-license = { text = "MIT" }
 authors = [
-  { name = "LID6393", email = "aksberry77@gmail.com" },
+    { name = "LID6393", email = "aksberry77@gmail.com" }
 ]
+license = { text = "MIT" }
+readme = "README.md"
 classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.12",
     "Framework :: FastAPI",
     "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
+    "Operating System :: OS Independent"
 ]
+requires-python = ">=3.12"
 
 dependencies = [
-    alembic==1.15.1,
-    annotated-types==0.7.0,
-    anyio==4.8.0,
-    asttokens==3.0.0,
-    asyncpg==0.30.0,
-    attrs==25.3.0,
-    backcall==0.2.0,
-    beautifulsoup4==4.13.3,
-    bleach==6.2.0,
-    certifi==2025.1.31,
-    cffi==1.17.1,
-    charset-normalizer==3.4.1,
-    click==8.1.8,
-    cryptography==44.0.1,
-    databases==0.9.0,
-    decorator==5.2.1,
-    defusedxml==0.7.1,
-    dnspython==2.7.0,
-    docopt==0.6.2,
-    email_validator==2.2.0,
-    executing==2.2.0,
-    fastapi==0.115.8,
-    fastapi-cli==0.0.7,
-    fastjsonschema==2.21.1,
-    greenlet==3.1.1,
-    h11==0.14.0,
-    httpcore==1.0.7,
-    httptools==0.6.4,
-    httpx==0.28.1,
-    idna==3.10,
-    ipython==8.12.3,
-    itsdangerous==2.2.0,
-    jedi==0.19.2,
-    Jinja2==3.1.5,
-    jsonschema==4.23.0,
-    jsonschema-specifications==2024.10.1,
-    jupyter_client==8.6.3,
-    jupyter_core==5.7.2,
-    jupyterlab_pygments==0.3.0,
-    jwt==1.3.1,
-    Mako==1.3.9,
-    markdown-it-py==3.0.0,
-    MarkupSafe==3.0.2,
-    matplotlib-inline==0.1.7,
-    mdurl==0.1.2,
-    mistune==3.1.2,
-    nbclient==0.10.2,
-    nbconvert==7.16.6,
-    nbformat==5.10.4,
-    orjson==3.10.15,
-    packaging==24.2,
-    pandocfilters==1.5.1,
-    parso==0.8.4,
-    passlib==1.7.4,
-    pexpect==4.9.0,
-    pickleshare==0.7.5,
-    pipreqs==0.5.0,
-    platformdirs==4.3.6,
-    prompt_toolkit==3.0.50,
-    psycopg2==2.9.10,
-    psycopg2-binary==2.9.10,
-    ptyprocess==0.7.0,
-    pure_eval==0.2.3,
-    pycparser==2.22,
-    pydantic==2.10.6,
-    pydantic-extra-types==2.10.2,
-    pydantic-settings==2.8.0,
-    pydantic_core==2.27.2,
-    Pygments==2.19.1,
-    PyJWT==2.10.1,
-    python-dateutil==2.9.0.post0,
-    python-dotenv==1.0.1,
-    python-multipart==0.0.20,
-    PyYAML==6.0.2,
-    pyzmq==26.3.0,
-    referencing==0.36.2,
-    requests==2.32.3,
-    rich==13.9.4,
-    rich-toolkit==0.13.2,
-    rpds-py==0.23.1,
-    shellingham==1.5.4,
-    six==1.17.0,
-    sniffio==1.3.1,
-    soupsieve==2.6,
-    SQLAlchemy==2.0.38,
-    stack-data==0.6.3,
-    starlette==0.45.3,
-    tinycss2==1.4.0,
-    tornado==6.4.2,
-    traitlets==5.14.3,
-    typer==0.15.2,
-    typing_extensions==4.12.2,
-    ujson==5.10.0,
-    urllib3==2.3.0,
-    uvicorn==0.34.0,
-    uvloop==0.21.0,
-    watchfiles==1.0.4,
-    wcwidth==0.2.13,
-    webencodings==0.5.1,
-    websockets==15.0,
-    yarg==0.1.9,
+    "alembic>=1.15.1,<2.0.0",
+    "anyio>=4.8.0,<5.0.0",
+    "asyncpg>=0.30.0,<1.0.0",
+    "attrs>=25.3.0,<26.0.0",
+    "certifi>=2025.1.31,<2026.0.0",
+    "charset-normalizer>=3.4.1,<4.0.0",
+    "click>=8.1.8,<9.0.0",
+    "cryptography>=44.0.1,<45.0.0",
+    "databases>=0.9.0,<1.0.0",
+    "dnspython>=2.7.0,<3.0.0",
+    "email-validator>=2.2.0,<3.0.0",
+    "fastapi>=0.115.8,<1.0.0",
+    "fastjsonschema>=2.21.1,<3.0.0",
+    "h11>=0.14.0,<0.15.0",
+    "httpcore>=1.0.7,<2.0.0",
+    "idna>=3.10,<4.0.0",
+    "itsdangerous>=2.2.0,<3.0.0",
+    "jinja2>=3.1.5,<4.0.0",
+    "jsonschema>=4.23.0,<5.0.0",
+    "jsonschema-specifications>=2024.10.1,<2025.0.0",
+    "jwt>=1.3.1,<2.0.0",
+    "mako>=1.3.9,<2.0.0",
+    "packaging>=24.2,<25.0.0",
+    "passlib>=1.7.4,<2.0.0",
+    "platformdirs>=4.3.6,<5.0.0",
+    "psycopg2-binary>=2.9.10,<3.0.0",
+    "pydantic>=2.10.6,<3.0.0",
+    "pydantic-extra-types>=2.10.2,<3.0.0",
+    "pydantic-settings>=2.8.0,<3.0.0",
+    "python-dateutil>=2.9.0.post0,<3.0.0",
+    "python-dotenv>=1.0.1,<2.0.0",
+    "python-multipart>=0.0.20,<0.1.0",
+    "pyyaml>=6.0.2,<7.0.0",
+    "referencing>=0.36.2,<1.0.0",
+    "requests>=2.32.3,<3.0.0",
+    "rpds-py>=0.23.1,<1.0.0",
+    "six>=1.17.0,<2.0.0",
+    "sniffio>=1.3.1,<2.0.0",
+    "sqlalchemy>=2.0.38,<3.0.0",
+    "starlette>=0.45.3,<1.0.0",
+    "stack-data>=0.6.3,<1.0.0",
+    "typing-extensions>=4.12.2,<5.0.0",
+    "urllib3>=2.3.0,<3.0.0",
+    "uvicorn>=0.34.0,<1.0.0",
+    "watchfiles>=1.0.4,<2.0.0",
+    "wcwidth>=0.2.13,<1.0.0",
+    "black>=25.1.0",
+    "isort>=6.0.1",
+    "codespell>=2.4.1",
+    "pylint>=3.3.7",
+    "mypy>=1.15.0",
+    "httpx>=0.28.1",
+    "mccabe>=0.7.0",
+    "astroid>=3.3.10",
+    "mypy-extensions>=1.1.0",
+    "pathspec>=0.12.1",
+    "tomlkit>=0.13.2",
+    "pytest>=8.2.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-cov>=5.0.0",
+    "pytest-mock>=3.14.0",
+    "factory-boy>=3.3.0"
 ]
 
-[project.optional-dependencies]
-dev = [
-    "pylint>=3.0.0",
-    "black>=23.0.0",
-    "pytest",
-    "httpx",
-]
+[build-system]
+requires = ["poetry-core>=1.8.0"]
+build-backend = "poetry.core.masonry.api"
 
-[tool.setuptools.packages.find]
-where = ["."]
-exclude = [
-    "tests*",
-    "2*", "3*", "4*", "5/5-1*", "5/5-2*", "9/9-2*",
-    "*.tests", "*.tests.*", "tests.*",
-    "**/__pycache__",
-    ".venv*"
-]
+[tool.poetry]
+package-mode = false
 
 [tool.black]
 line-length = 79
@@ -162,12 +108,12 @@ exclude = '''
   | migrations/
   | tests/
   | __pycache__/
-  | 2/
-  | 3/
-  | 4/
-  | 5/5-1/
-  | 5/5-2/
-  | 9/9-2/
+  | step_2/
+  | step_3/
+  | step_4/
+  | step_5/lesson_5_1/
+  | step_5/lesson_5_2/
+  | step_9/lesson_9_2/
   | .*\.egg-info/
 )/
 '''
@@ -180,13 +126,13 @@ ignore-paths = [
     "alembic",
     "migrations",
     "tests",
-    "2/",
-    "3/",
-    "4/",
-    "5/5-1/",
-    "5/5-2/",
-    "9/9-2/",
-    "**/__pycache__/",
+    "step_2/",
+    "step_3/",
+    "step_4/",
+    "step_5/lesson_5_1/",
+    "step_5/lesson_5_2/",
+    "step_9/lesson_9_2/",
+    ".*__pycache__.*",
     ".*\\.egg-info/",
     ".*[\\/]alembic[\\/]env\\.py$"
 ]
@@ -224,7 +170,7 @@ min-similarity-lines = 4
 logging-format-style = "new"
 
 [tool.pylint.'EXCEPTIONS']
-overgeneral-exceptions = ["Exception"]
+overgeneral-exceptions = ["builtins.Exception"]
 
 [tool.pytest.ini_options]
 pythonpath = [".", "src"]
@@ -235,10 +181,7 @@ addopts = "-ra -q"
 python_version = "3.12"
 warn_return_any = true
 warn_unused_configs = true
-exclude = [
-    'venv', '.venv', 'migrations', 'alembic',
-    '2/', '3/', '4/', '5/5-1/', '5/5-2/', '9/9-2/'
-]
+exclude = 'venv|\.venv|migrations|alembic|step_2/|step_3/|step_4/|step_5/lesson_5_1/|step_5/lesson_5_2/|step_9/lesson_9_2/'
 plugins = ["pydantic.mypy"]
 
 [tool.pydantic-mypy]
