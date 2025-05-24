@@ -36,12 +36,12 @@
         "**/*.egg-info/**": true,
         "**/build/**": true,
         "**/dist/**": true,
-        "2/**": true,
-        "3/**": true,
-        "4/**": true,
-        "9/9-2/**": true,
-        "5/5-1/**": true,
-        "5/5-2/**": true,
+        "step_2/**": true,
+        "step_3/**": true,
+        "step_4/**": true,
+        "step_5/lesson_5_1/**": true,
+        "step_5/lesson_5_2/**": true,
+        "step_9/lesson_9_2/**": true,
     },
     // debug
     "debug.autoExpandLazyVariables": "on",
@@ -64,39 +64,17 @@
     "window.zoomLevel": 0.1,
     // git
     "git.autoRepositoryDetection": "subFolders",
-    // python analysis and formatting
-    "python.analysis.autoImportCompletions": true,
-    "python.analysis.completeFunctionParens": true,
-    "python.analysis.importFormat": "absolute",
-    "python.analysis.diagnosticMode": "openFilesOnly",
-    "python.analysis.indexing": false,
-    "python.analysis.typeCheckingMode": "off",
-    "python.analysis.exclude": [
-        "**/site-packages/**",
-        ".venv/**",
-        "**/__pycache__/**",
-        "alembic/**",
-        "migrations/**",
-        "2/**",
-        "3/**",
-        "4/**",
-        "9/9-2/**",
-        "5/5-1/**",
-        "5/5-2/**",
-    ],
-    // python formatting and imports
-    "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter"
-    },
-    "editor.codeActionsOnSave": {
-        "source.organizeImports": "explicit",
-        "source.fixAll": "explicit"
-    },
+    // python interpreter
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
     // python testing
     "python.testing.pytestEnabled": true,
     "python.testing.unittestEnabled": false,
     "python.testing.autoTestDiscoverOnSaveEnabled": false,
-    // python interpreter
-    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
-    "codium.codeCompletion.enable": false,
+    // code actions
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit",
+        "source.fixAll": "explicit"
+    },
+    // codium
+    "codium.codeCompletion.enable": false
 }
