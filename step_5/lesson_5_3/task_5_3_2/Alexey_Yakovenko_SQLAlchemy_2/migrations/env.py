@@ -1,6 +1,3 @@
-# pylint: disable-all
-# flake8: noqa
-
 import asyncio
 from logging.config import fileConfig
 
@@ -10,8 +7,8 @@ from sqlalchemy.ext.asyncio import async_engine_from_config
 
 from alembic import context
 
-from database import Base, DATABASE_URL
-from models import User, Comment, Post, Profile
+from step_5.lesson_5_3.task_5_3_2.Alexey_Yakovenko_SQLAlchemy_2.dao.database import Base, DATABASE_URL
+from step_5.lesson_5_3.task_5_3_2.Alexey_Yakovenko_SQLAlchemy_2.models import User, Comment, Post, Profile
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

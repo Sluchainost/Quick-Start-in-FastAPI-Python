@@ -22,7 +22,9 @@ from typing import Optional
 
 from sqlalchemy import text
 
-from .database import async_session_maker
+from step_5.lesson_5_3.task_5_3_2.Alexey_Yakovenko_SQLAlchemy_2.dao.database import (
+    async_session_maker,
+)
 
 
 def connection(isolation_level: Optional[str] = None, commit: bool = True):

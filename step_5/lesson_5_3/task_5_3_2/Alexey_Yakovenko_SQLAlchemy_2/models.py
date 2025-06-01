@@ -10,9 +10,19 @@ are explicitly documented for scientific clarity and reproducibility.
 from sqlalchemy import ForeignKey, text, JSON
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from .dao.database import Base, uniq_str_an, array_or_none_an, content_an
+from step_5.lesson_5_3.task_5_3_2.Alexey_Yakovenko_SQLAlchemy_2.dao.database import (
+    Base,
+    uniq_str_an,
+    array_or_none_an,
+    content_an,
+)
 
-from .sql_enums import GenderEnum, ProfessionEnum, StatusPost, RatingEnum
+from step_5.lesson_5_3.task_5_3_2.Alexey_Yakovenko_SQLAlchemy_2.sql_enums import (
+    GenderEnum,
+    ProfessionEnum,
+    StatusPost,
+    RatingEnum,
+)
 
 
 class Profile(Base):

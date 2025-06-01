@@ -13,9 +13,16 @@ from asyncio import run
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from .dao.session_maker import connection
+from step_5.lesson_5_3.task_5_3_2.Alexey_Yakovenko_SQLAlchemy_2.dao.session_maker import (
+    connection,
+)
 
-from .models import Profile, User, GenderEnum, ProfessionEnum
+from step_5.lesson_5_3.task_5_3_2.Alexey_Yakovenko_SQLAlchemy_2.models import (
+    Profile,
+    User,
+    GenderEnum,
+    ProfessionEnum,
+)
 
 
 @connection(commit=False)

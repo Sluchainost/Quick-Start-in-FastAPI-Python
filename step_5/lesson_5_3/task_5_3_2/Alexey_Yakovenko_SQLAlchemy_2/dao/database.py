@@ -28,7 +28,9 @@ from sqlalchemy.ext.asyncio import (
     create_async_engine,
 )
 
-from ..config import settings
+from step_5.lesson_5_3.task_5_3_2.Alexey_Yakovenko_SQLAlchemy_2.config import (
+    settings,
+)
 
 
 # Retrieve the database URL from the project settings.

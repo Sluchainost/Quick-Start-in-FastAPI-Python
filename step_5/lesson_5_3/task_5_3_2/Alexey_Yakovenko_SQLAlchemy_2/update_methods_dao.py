@@ -21,10 +21,17 @@ from sqlalchemy import update
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from .models import Profile
+from step_5.lesson_5_3.task_5_3_2.Alexey_Yakovenko_SQLAlchemy_2.models import (
+    Profile,
+)
 
-from .dao.dao import ProfileDAO, UserDAO
-from .dao.session_maker import connection
+from step_5.lesson_5_3.task_5_3_2.Alexey_Yakovenko_SQLAlchemy_2.dao.dao import (
+    ProfileDAO,
+    UserDAO,
+)
+from step_5.lesson_5_3.task_5_3_2.Alexey_Yakovenko_SQLAlchemy_2.dao.session_maker import (
+    connection,
+)
 
 
 @connection(commit=True)

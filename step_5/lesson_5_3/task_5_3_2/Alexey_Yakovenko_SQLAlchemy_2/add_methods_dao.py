@@ -20,11 +20,17 @@ from pydantic import BaseModel
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from .dao.dao import UserDAO
+from step_5.lesson_5_3.task_5_3_2.Alexey_Yakovenko_SQLAlchemy_2.dao.dao import (
+    UserDAO,
+)
+from step_5.lesson_5_3.task_5_3_2.Alexey_Yakovenko_SQLAlchemy_2.dao.session_maker import (
+    connection,
+)
 
-from .dao.session_maker import connection
-
-from .sql_enums import GenderEnum, ProfessionEnum
+from step_5.lesson_5_3.task_5_3_2.Alexey_Yakovenko_SQLAlchemy_2.sql_enums import (
+    GenderEnum,
+    ProfessionEnum,
+)
 
 
 @connection(commit=False)

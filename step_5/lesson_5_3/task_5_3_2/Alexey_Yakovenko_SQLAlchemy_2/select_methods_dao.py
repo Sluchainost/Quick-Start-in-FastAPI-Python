@@ -23,13 +23,20 @@ from sqlalchemy import Row
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from .dao.dao import UserDAO
+from step_5.lesson_5_3.task_5_3_2.Alexey_Yakovenko_SQLAlchemy_2.dao.dao import (
+    UserDAO,
+)
+from step_5.lesson_5_3.task_5_3_2.Alexey_Yakovenko_SQLAlchemy_2.dao.session_maker import (
+    connection,
+)
 
-from .dao.session_maker import connection
+from step_5.lesson_5_3.task_5_3_2.Alexey_Yakovenko_SQLAlchemy_2.models import (
+    User,
+)
 
-from .models import User
-
-from .schemas import UserPydantic
+from step_5.lesson_5_3.task_5_3_2.Alexey_Yakovenko_SQLAlchemy_2.schemas import (
+    UserPydantic,
+)
 
 # from schemas import UsernameIdPydantic
 

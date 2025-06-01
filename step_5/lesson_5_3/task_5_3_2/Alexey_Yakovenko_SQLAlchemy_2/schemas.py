@@ -10,7 +10,10 @@ from typing import List
 
 from pydantic import BaseModel, ConfigDict
 
-from .sql_enums import GenderEnum, ProfessionEnum
+from step_5.lesson_5_3.task_5_3_2.Alexey_Yakovenko_SQLAlchemy_2.sql_enums import (
+    GenderEnum,
+    ProfessionEnum,
+)
 
 
 class ProfilePydantic(BaseModel):

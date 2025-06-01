@@ -15,9 +15,16 @@ from sqlalchemy.exc import SQLAlchemyError
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from .base import BaseDAO
+from step_5.lesson_5_3.task_5_3_2.Alexey_Yakovenko_SQLAlchemy_2.dao.base import (
+    BaseDAO,
+)
 
-from ..models import User, Profile, Post, Comment
+from step_5.lesson_5_3.task_5_3_2.Alexey_Yakovenko_SQLAlchemy_2.models import (
+    User,
+    Profile,
+    Post,
+    Comment,
+)
 
 
 class UserDAO(BaseDAO):
