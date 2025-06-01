@@ -91,50 +91,57 @@ package-mode = false
 [tool.black]
 line-length = 79
 target-version = ['py312']
-exclude = '''
-/(
-    \.eggs
-  | \.git
-  | \.hg
-  | \.mypy_cache
-  | \.tox
-  | \.venv
-  | _build
-  | buck-out
-  | build
-  | dist
-  | alembic/env\.py
-  | alembic/
-  | migrations/
-  | tests/
-  | __pycache__/
-  | step_2/
-  | step_3/
-  | step_4/
-  | step_5/lesson_5_1/
-  | step_5/lesson_5_2/
-  | step_9/lesson_9_2/
-  | .*\.egg-info/
-)/
-'''
+exclude = """
+    .*/migrations(/.*)? |
+    .*/\\.eggs |
+    .*/\\.git |
+    .*/\\.hg |
+    .*/\\.mypy_cache/.* |
+    .*/\\.tox |
+    .*/\\.venv/.* |
+    .*/_build |
+    .*/buck-out |
+    .*/build |
+    .*/dist |
+    .*/alembic/.* |
+    .*/tests/.* |
+    .*/__pycache__/.* |
+    .*/__init__\\.py |
+    step_2/.* |
+    step_3/.* |
+    step_4/.* |
+    step_5/lesson_5_1/.* |
+    step_5/lesson_5_2/.* |
+    step_9/lesson_9_2/.* |
+    .*/\\.egg-info/.*
+"""
 
 [tool.pylint.'MAIN']
 init-hook='import sys; sys.path.append(".")'
 jobs = 1
 ignore = [".venv", "build", "dist", "docs", "node_modules"]
 ignore-paths = [
-    "alembic",
-    "migrations",
-    "tests",
-    "step_2/",
-    "step_3/",
-    "step_4/",
-    "step_5/lesson_5_1/",
-    "step_5/lesson_5_2/",
-    "step_9/lesson_9_2/",
-    ".*__pycache__.*",
-    ".*\\.egg-info/",
-    ".*[\\/]alembic[\\/]env\\.py$"
+    ".*/.eggs",
+    ".*/.git",
+    ".*/.hg",
+    ".*/.mypy_cache/.*",
+    ".*/.tox",
+    ".*/_build/.*",
+    ".*/buck-out/.*",
+    ".*/build/.*",
+    ".*/dist/.*",
+    ".*/alembic/.*",
+    ".*/tests/.*",
+    ".*/__pycache__/.*",
+    "step_2/.*",
+    "step_3/.*",
+    "step_4/.*",
+    "step_5/lesson_5_1/.*",
+    "step_5/lesson_5_2/.*",
+    "step_9/lesson_9_2/.*",
+    ".*/.egg-info/.*",
+    ".*/migrations/.*",
+    ".*/__init__.py",
 ]
 
 [tool.pylint.'MESSAGES CONTROL']
@@ -181,7 +188,29 @@ addopts = "-ra -q"
 python_version = "3.12"
 warn_return_any = true
 warn_unused_configs = true
-exclude = 'venv|\.venv|migrations|alembic|step_2/|step_3/|step_4/|step_5/lesson_5_1/|step_5/lesson_5_2/|step_9/lesson_9_2/'
+exclude = [
+    ".*/migrations/.*",
+    ".*/\\.eggs",
+    ".*/\\.git",
+    ".*/\\.hg",
+    ".*/\\.mypy_cache/.*",
+    ".*/\\.tox",
+    ".*/_build/.*",
+    ".*/buck-out/.*",
+    ".*/build/.*",
+    ".*/dist/.*",
+    ".*/alembic/.*",
+    ".*/tests/.*",
+    ".*/__pycache__/.*",
+    ".*/__init__\\.py",
+    "step_2/.*",
+    "step_3/.*",
+    "step_4/.*",
+    "step_5/lesson_5_1/.*",
+    "step_5/lesson_5_2/.*",
+    "step_9/lesson_9_2/.*",
+    ".*/\\.egg-info/.*",
+]
 plugins = ["pydantic.mypy"]
 
 [tool.pydantic-mypy]
