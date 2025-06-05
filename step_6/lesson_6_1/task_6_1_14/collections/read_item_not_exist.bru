@@ -1,0 +1,11 @@
+meta {
+  name: read_item_not_exist
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://127.0.0.1:8000/items/42
+  body: none
+  auth: inherit
+}
