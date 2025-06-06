@@ -1,0 +1,21 @@
+meta {
+  name: user_data_all_correct
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://127.0.0.1:8000/items/
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "username": "Joch",
+    "age": "19",
+    "email": "contact@mail.com",
+    "password": "12345678",
+    "phone": "1234567890"
+  }
+}
