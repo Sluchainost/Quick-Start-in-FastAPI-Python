@@ -78,7 +78,8 @@ dependencies = [
     "pytest-asyncio>=0.23.0",
     "pytest-cov>=5.0.0",
     "pytest-mock>=3.14.0",
-    "factory-boy>=3.3.0"
+    "factory-boy>=3.3.0",
+    "fastapi-babel (>=1.0.0,<2.0.0)"
 ]
 
 [build-system]
