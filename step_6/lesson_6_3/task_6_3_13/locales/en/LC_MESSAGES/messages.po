@@ -1,0 +1,28 @@
+# English translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-06-09 11:15+0300\n"
+"PO-Revision-Date: 2025-06-09 11:17+0300\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: step_6/lesson_6_3/task_6_3_13/endpoints.py:39
+msgid "User with this email already exists."
+msgstr "User with this email already exists."
+
+#: step_6/lesson_6_3/task_6_3_13/endpoints.py:67
+#, python-brace-format
+msgid "User with id={user_id} not found."
+msgstr "User with id={user_id} not found."

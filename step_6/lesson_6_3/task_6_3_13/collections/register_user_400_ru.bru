@@ -1,0 +1,22 @@
+meta {
+  name: register_user_400_ru
+  type: http
+  seq: 7
+}
+
+post {
+  url: http://127.0.0.1:8000/register/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Accept-Language: ru
+}
+
+body:json {
+  {
+    "name": "Jhon",
+    "email": "example@email.com"
+  }
+}
