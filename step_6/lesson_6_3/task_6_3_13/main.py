@@ -28,7 +28,7 @@ babel_configs = BabelConfigs(
     BABEL_TRANSLATION_DIRECTORY="locales",
 )
 
-# Инициализируем объект Babel с использованием конфигурации
+# Initialize the Babel object using the configuration
 babel = Babel(configs=babel_configs)
 
 app.add_middleware(BabelMiddleware, babel_configs=babel_configs)
