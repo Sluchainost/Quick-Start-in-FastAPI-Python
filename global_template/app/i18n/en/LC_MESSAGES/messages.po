@@ -1,0 +1,23 @@
+msgid "errors.todo.not_found"
+msgstr "ToDo item with ID {todo_id} not found"
+
+msgid "errors.todo.already_exists"
+msgstr "ToDo item already exists"
+
+msgid "errors.todo.validation_error"
+msgstr "Invalid ToDo data"
+
+msgid "errors.todo.delete_failed"
+msgstr "Failed to delete ToDo item"
+
+msgid "errors.db.general"
+msgstr "Database error occurred"
+
+msgid "errors.db.connection_error"
+msgstr "Database connection error"
+
+msgid "errors.db.record_not_found"
+msgstr "Database record not found"
+
+msgid "errors.db.integrity_error"
+msgstr "Database integrity error"
