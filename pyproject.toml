@@ -79,7 +79,8 @@ dependencies = [
     "pytest-cov>=5.0.0",
     "pytest-mock>=3.14.0",
     "factory-boy>=3.3.0",
-    "fastapi-babel (>=1.0.0,<2.0.0)"
+    "fastapi-babel (>=1.0.0,<2.0.0)",
+    "inflection (>=0.5.1,<0.6.0)"
 ]
 
 [build-system]
@@ -93,13 +94,13 @@ package-mode = false
 line-length = 79
 target-version = ['py312']
 exclude = """
-    .*/migrations(/.*)? |
+    .*/\\.venv/.* |
     .*/\\.eggs |
     .*/\\.git |
     .*/\\.hg |
     .*/\\.mypy_cache/.* |
+    .*/\\.qodo/.* |
     .*/\\.tox |
-    .*/\\.venv/.* |
     .*/_build |
     .*/buck-out |
     .*/build |
@@ -107,14 +108,15 @@ exclude = """
     .*/alembic/.* |
     .*/tests/.* |
     .*/__pycache__/.* |
-    .*/__init__\\.py |
     step_2/.* |
     step_3/.* |
     step_4/.* |
     step_5/lesson_5_1/.* |
     step_5/lesson_5_2/.* |
     step_9/lesson_9_2/.* |
-    .*/\\.egg-info/.*
+    .*/\\.egg-info/.* |
+    .*/migrations(/.*)? |
+    .*/__init__\\.py
 """
 
 [tool.pylint.'MAIN']
@@ -122,11 +124,13 @@ init-hook='import sys; sys.path.append(".")'
 jobs = 1
 ignore = [".venv", "build", "dist", "docs", "node_modules"]
 ignore-paths = [
-    ".*/.eggs",
-    ".*/.git",
-    ".*/.hg",
-    ".*/.mypy_cache/.*",
-    ".*/.tox",
+    ".*/\\.venv/.*",
+    ".*/\\.eggs",
+    ".*/\\.git",
+    ".*/\\.hg",
+    ".*/\\.mypy_cache/.*",
+    ".*/\\.qodo/.*",
+    ".*/\\.tox",
     ".*/_build/.*",
     ".*/buck-out/.*",
     ".*/build/.*",
@@ -140,9 +144,9 @@ ignore-paths = [
     "step_5/lesson_5_1/.*",
     "step_5/lesson_5_2/.*",
     "step_9/lesson_9_2/.*",
-    ".*/.egg-info/.*",
+    ".*/\\.egg-info/.*",
     ".*/migrations/.*",
-    ".*/__init__.py",
+    ".*/__init__\\.py",
 ]
 
 [tool.pylint.'MESSAGES CONTROL']
@@ -155,6 +159,7 @@ disable = [
     "duplicate-code",
     "line-too-long",
     "fixme",
+    "unsubscriptable-object",
 ]
 
 [tool.pylint.'REPORTS']
@@ -181,20 +186,24 @@ logging-format-style = "new"
 overgeneral-exceptions = ["builtins.Exception"]
 
 [tool.pytest.ini_options]
-pythonpath = [".", "src"]
-testpaths = ["tests"]
 addopts = "-ra -q"
+python_files = "test_*.py *_test.py"
+python_classes = "Test*"
+python_functions = "test_*"
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
 
 [tool.mypy]
 python_version = "3.12"
 warn_return_any = true
 warn_unused_configs = true
 exclude = [
-    ".*/migrations/.*",
+    ".*/\\.venv/.*",
     ".*/\\.eggs",
     ".*/\\.git",
     ".*/\\.hg",
     ".*/\\.mypy_cache/.*",
+    ".*/\\.qodo/.*",
     ".*/\\.tox",
     ".*/_build/.*",
     ".*/buck-out/.*",
@@ -203,7 +212,6 @@ exclude = [
     ".*/alembic/.*",
     ".*/tests/.*",
     ".*/__pycache__/.*",
-    ".*/__init__\\.py",
     "step_2/.*",
     "step_3/.*",
     "step_4/.*",
@@ -211,6 +219,8 @@ exclude = [
     "step_5/lesson_5_2/.*",
     "step_9/lesson_9_2/.*",
     ".*/\\.egg-info/.*",
+    ".*/migrations/.*",
+    ".*/__init__\\.py",
 ]
 plugins = ["pydantic.mypy"]
 
