@@ -10,24 +10,12 @@ The target audience for this course includes Python developers and web programme
 
 This section describes the purpose of key configuration files used in this project to ensure consistency, automation, and a streamlined development process.
 
-### `requirements.txt`
-
-* **Purpose:** The standard file for specifying Python project dependencies.
-* **How it works:** Contains a list of Python packages required to run the project, with the option to specify their versions. The `pip` package manager uses this file to install all required libraries with the command `pip install -r requirements.txt`.
-* **Benefit:** Ensures that all developers and environments (local, testing, production) use the same dependency versions, preventing compatibility issues.
-
 ### `pyproject.toml`
 
 * **Purpose:** The modern standard file for configuring Python projects, introduced in PEP 518.
 * **How it works:** Used to define project metadata, build dependencies (e.g., for `setuptools`, `poetry`, `pdm`), and can also contain configurations for various development tools (e.g., `black`, `isort`, `pytest`, `mypy`, `ruff`).
 * **Benefit:** Centralizes project and tool configuration, replacing multiple individual configuration files (e.g., `setup.py`, `MANIFEST.IN`, `.isort.cfg`). Provides a more declarative and standardized way to manage the project.
   * *Note: If `pyproject.toml` is used for dependency management (e.g., with Poetry or PDM), it can replace `requirements.txt`.*
-
-### `.pylintrc`
-
-* **Purpose:** Configuration file for Pylint, a static code analyzer for Python.
-* **How it works:** Allows detailed customization of the rules and checks Pylint applies to the code. You can disable specific warnings, set naming standards, define maximum line length, specify ignored files, etc.
-* **Benefit:** Helps maintain high code quality, adhere to coding standards (e.g., PEP 8), and detect potential errors or "code smells."
 
 ### `.gitignore`
 
